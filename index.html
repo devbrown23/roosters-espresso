@@ -4,21 +4,18 @@
   <meta charset="UTF-8" />
   <title>Roosters Espresso | Website Mockup</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Simple mockup of a redesigned homepage for Roosters Espresso, used for class presentation." />
+  <meta name="description" content="Simple mockup of a redesigned homepage for Roosters Espresso, used for a class presentation." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg: #0f172a;
-      --bg-alt: #111827;
-      --accent-orange: #f97316;
       --accent-yellow: #facc15;
-      --accent-soft: rgba(250, 204, 21, 0.15);
+      --accent-orange: #f97316;
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
       --card-bg: #020617;
-      --border-subtle: #1f2937;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.6);
-      --radius-xl: 1.5rem;
+      --border: #1f2937;
       --radius-lg: 1rem;
     }
 
@@ -30,12 +27,11 @@
 
     body {
       font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(250, 204, 21, 0.25) 0, transparent 45%),
-        radial-gradient(circle at bottom, rgba(249, 115, 22, 0.18) 0, #020617 55%);
-      color: var(--text-main);
-      line-height: 1.6;
       min-height: 100vh;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at top, rgba(250, 204, 21, 0.35) 0, transparent 55%),
+        radial-gradient(circle at bottom, rgba(249, 115, 22, 0.3) 0, #020617 55%);
     }
 
     a {
@@ -43,24 +39,18 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
     .page {
-      max-width: 1120px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 1.5rem 1.25rem 3rem;
+      padding: 2rem 1.25rem 3rem;
     }
 
-    /* NAV */
+    /* HEADER */
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
     }
 
     .logo {
@@ -80,18 +70,13 @@
       font-weight: 800;
       font-size: 1.25rem;
       color: #020617;
-      box-shadow: 0 10px 30px rgba(250, 250, 249, 0.4);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(250, 250, 249, 0.5);
     }
 
     .logo-text span:first-child {
       font-weight: 700;
       letter-spacing: 0.08em;
-      font-size: 1rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
     }
 
@@ -102,14 +87,14 @@
 
     nav {
       display: flex;
-      gap: 1.25rem;
-      font-size: 0.9rem;
+      gap: 1rem;
+      font-size: 0.85rem;
     }
 
     nav a {
-      color: var(--text-muted);
       position: relative;
       padding-bottom: 0.15rem;
+      color: var(--text-muted);
     }
 
     nav a::after {
@@ -117,8 +102,8 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 0;
       height: 2px;
+      width: 0;
       background: linear-gradient(to right, var(--accent-orange), var(--accent-yellow));
       transition: width 0.2s ease-out;
     }
@@ -131,15 +116,24 @@
       width: 100%;
     }
 
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       font-size: 0.75rem;
-      padding: 0.22rem 0.8rem;
+      padding: 0.25rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      background: rgba(15, 23, 42, 0.85);
       color: var(--accent-yellow);
       margin-bottom: 0.8rem;
     }
@@ -151,47 +145,38 @@
       background: #22c55e;
     }
 
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.7fr);
-      gap: 2rem;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+    h1 {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3.1rem);
       line-height: 1.1;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
     }
 
-    .hero h1 span {
+    h1 span {
       background: linear-gradient(to right, var(--accent-yellow), var(--accent-orange));
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--text-muted);
       max-width: 30rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.3rem;
     }
 
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
+      gap: 0.7rem;
+      margin-bottom: 1.3rem;
     }
 
     .pill {
-      border-radius: 999px;
+      font-size: 0.78rem;
       padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
       background: rgba(15, 23, 42, 0.9);
-      border: 1px solid var(--border-subtle);
-      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
@@ -202,25 +187,20 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      border-radius: 999px;
       padding: 0.6rem 1.4rem;
+      border-radius: 999px;
       border: 1px solid transparent;
       font-size: 0.9rem;
       cursor: pointer;
-      transition:
-        transform 0.15s ease-out,
-        box-shadow 0.15s ease-out,
-        background 0.15s,
-        border-color 0.15s;
+      transition: 0.15s ease-out;
       white-space: nowrap;
     }
 
@@ -228,17 +208,17 @@
       background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
       color: #111827;
       font-weight: 600;
-      box-shadow: 0 18px 40px rgba(250, 204, 21, 0.4);
+      box-shadow: 0 16px 35px rgba(250, 204, 21, 0.45);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 20px 45px rgba(250, 204, 21, 0.6);
+      box-shadow: 0 18px 40px rgba(250, 204, 21, 0.65);
     }
 
     .btn-ghost {
       background: transparent;
-      border-color: rgba(148, 163, 184, 0.55);
+      border-color: rgba(148, 163, 184, 0.6);
       color: var(--text-main);
     }
 
@@ -252,103 +232,35 @@
       color: var(--text-muted);
     }
 
-    .hero-visual {
-      background:
-        radial-gradient(circle at top, rgba(250, 204, 21, 0.18) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.24) 0, #020617 65%);
-      border-radius: var(--radius-xl);
-      padding: 1.3rem 1.3rem 1.5rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      position: relative;
-      overflow: hidden;
+    .hero-card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 1.25rem;
+      padding: 1.3rem 1.2rem 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
     }
 
-    .hero-visual-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.2rem;
+    .hero-card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
     }
 
-    .hero-tagline {
+    .hero-card p {
       font-size: 0.8rem;
       color: var(--text-muted);
-    }
-
-    .coffee-badge {
-      border-radius: 999px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.75rem;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid var(--accent-soft);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .coffee-badge span {
-      font-size: 0.9rem;
-    }
-
-    .hero-visual-main {
-      display: grid;
-      grid-template-columns: 1.2fr;
-      gap: 1rem;
-    }
-
-    .hero-mug {
-      border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, #111827, #020617);
-      padding: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.9rem;
-      align-items: center;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero-mug-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, var(--accent-yellow), var(--accent-orange));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.7rem;
-      color: #0b1120;
-    }
-
-    .hero-mug-text h3 {
-      font-size: 0.95rem;
-      margin-bottom: 0.1rem;
-    }
-
-    .hero-mug-text p {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      margin-bottom: 0.7rem;
     }
 
     .hero-locations {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 0.8rem;
-      background: rgba(15, 23, 42, 0.96);
       font-size: 0.8rem;
-    }
-
-    .hero-locations-title {
-      font-weight: 600;
-      margin-bottom: 0.35rem;
+      border-top: 1px solid rgba(55, 65, 81, 0.8);
+      padding-top: 0.7rem;
     }
 
     .hero-location-row {
       display: flex;
       justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
       color: var(--text-muted);
     }
 
@@ -360,34 +272,29 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem;
-      margin-top: 0.35rem;
+      margin-top: 0.3rem;
     }
 
     .chip {
       font-size: 0.7rem;
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
       border: 1px solid rgba(148, 163, 184, 0.4);
       color: var(--text-muted);
     }
 
-    /* SECTIONS */
+    /* GENERIC SECTION */
     section {
-      margin-bottom: 2.4rem;
+      margin-bottom: 2.5rem;
     }
 
     .section-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
       margin-bottom: 1rem;
     }
 
     .section-heading h2 {
       font-size: 1.3rem;
+      margin-bottom: 0.3rem;
     }
 
     .section-heading h2 span {
@@ -399,9 +306,234 @@
     .section-heading p {
       font-size: 0.85rem;
       color: var(--text-muted);
-      max-width: 440px;
+      max-width: 36rem;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, mi
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.16), transparent 60%),
+        rgba(15, 23, 42, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-yellow);
+      margin-bottom: 0.15rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.85);
+      padding-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-circle">R</div>
+        <div class="logo-text">
+          <span>ROOSTERS ESPRESSO</span>
+          <span>Local Drive-Thru • Since 2005</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#beans">Beans</a>
+        <a href="#menu">Menu</a>
+        <a href="#ig">Instagram</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Homepage mockup for class presentation
+        </div>
+        <h1>Better <span>coffee</span> for the morning commute.</h1>
+        <p class="hero-sub">
+          A unified homepage that highlights Roosters’ <strong>quality house-roasted beans</strong>,
+          <strong>affordable prices</strong>, and <strong>drive-thru convenience</strong> for Seattle
+          and Mountlake Terrace customers.
+        </p>
+        <div class="hero-grid">
+          <div class="pill"><strong>$4.25</strong> latte average (vs. $5.23 in Seattle)</div>
+          <div class="pill"><strong>Opens 5:30 AM</strong> weekdays</div>
+          <div class="pill">House-roasted beans</div>
+          <div class="pill">Near I-5 • Drive-Thru</div>
+        </div>
+        <div class="hero-actions">
+          <a href="#beans" class="btn btn-primary">Buy Roosters Beans</a>
+          <a href="#menu" class="btn btn-ghost">View Full Menu</a>
+        </div>
+        <p class="hero-footnote">
+          *Prototype layout showing how a single homepage can bring together Roosters’ story,
+          locations, and online ordering paths.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <h3>What you’re seeing</h3>
+        <p>
+          This is the simple mockup we describe in the presentation: a clean hero with clear calls-to-action,
+          focused on taste, price, and convenience.
+        </p>
+        <div class="hero-locations">
+          <div class="hero-location-row">
+            <span>Seattle</span><span>220+ Google reviews</span>
+          </div>
+          <div class="hero-location-row">
+            <span>Mountlake Terrace</span><span>48 Google reviews</span>
+          </div>
+          <div class="chip-row">
+            <div class="chip">Drive-Thru</div>
+            <div class="chip">Near I-5</div>
+            <div class="chip">Local Favorite</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-heading">
+        <h2><span>Why this homepage layout?</span></h2>
+        <p>
+          It puts what coffee drinkers care about most—taste, price, and convenience—front and center,
+          while giving quick paths to buy beans, check the menu, or find a location.
+        </p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-tag">Clarity</div>
+          <h3>Simple navigation</h3>
+          <p>Clean top navigation makes it easy to use this one link everywhere online.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag">Brand</div>
+          <h3>Story + value</h3>
+          <p>The hero quickly explains what makes Roosters different from big chains.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag">Action</div>
+          <h3>Business goals</h3>
+          <p>Primary buttons push visitors to buy beans and check the menu.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEANS -->
+    <section id="beans">
+      <div class="section-heading">
+        <h2><span>Featured Beans</span></h2>
+        <p>A “Buy Beans” area on the homepage creates an online revenue stream Roosters doesn’t currently have.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Roosters House Espresso</h3>
+          <p>Balanced and smooth – perfect for daily lattes and americanos.</p>
+        </article>
+        <article class="card">
+          <h3>Breakfast Blend</h3>
+          <p>Lighter roast for an easy-drinking morning cup.</p>
+        </article>
+        <article class="card">
+          <h3>“Commuter” Dark Roast</h3>
+          <p>Bold flavor that stays strong in milk-based drinks and cold brew.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="section-heading">
+        <h2><span>Menu Preview</span></h2>
+        <p>The homepage highlights top drinks and food, then links to a full menu page in the real site.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Drinks</h3>
+          <p>Lattes, mochas, americanos, cold brew, chai, and seasonal specials.</p>
+        </article>
+        <article class="card">
+          <h3>Food</h3>
+          <p>Breakfast sandwiches, bagels, and pastries for commuters on the go.</p>
+        </article>
+        <article class="card">
+          <h3>Order options</h3>
+          <p>Buttons for “Order via DoorDash / Uber Eats” and “Call to order ahead”.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section id="ig">
+      <div class="section-heading">
+        <h2><span>Instagram Feed</span></h2>
+        <p>A rotating Instagram section keeps the homepage fresh with real photos of drinks and baristas.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>@roostersespresso</h3>
+          <p>In the live site, this block would embed the real Instagram feed.</p>
+        </article>
+        <article class="card">
+          <h3>Why it matters</h3>
+          <p>Social proof and real photos help attract new customers and repeat visits.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <span>Roosters Espresso – Website Mockup (Slide 12)</span>
+      <span>Concept & layout by Devin Brown • Bellevue College project</span>
+    </footer>
+  </div>
+</body>
+</html>
